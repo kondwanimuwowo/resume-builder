@@ -1,0 +1,36 @@
+import { useState } from "react";
+
+function SkillsForm({ skills, addSkillEntry, removeSkillEntry }) {
+  const [newSkill, setNewSkill] = useState("");
+
+  function handleAdd() {
+    addSkillEntry(newSkill);
+    setNewSkill("");
+  }
+
+  return (
+    <div>
+      {skills
+        .filter((skill) => skill.trim() !== "")
+        .map((skill, index) => (
+          <li key={index}>
+            {skill}
+            <button onClick={() => removeSkillEntry(index)}>Delete</button>
+          </li>
+        ))}
+
+      <label htmlFor="skill">Enter New Skill</label>
+      <input
+        type="text"
+        id="skill"
+        name="skill"
+        placeholder="e.g., Javascript"
+        value={newSkill}
+        onChange={(event) => setNewSkill(event.target.value)}
+      />
+      <button onClick={handleAdd}>Add</button>
+    </div>
+  );
+}
+
+export default SkillsForm;

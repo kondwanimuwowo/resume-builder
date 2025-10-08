@@ -1,6 +1,6 @@
 import "./PersonalInfo.css";
 
-function PersonalInfo({ personalInfo, setPersonalInfo }) {
+function PersonalInfoForm({ personalInfo, setPersonalInfo }) {
   return (
     <>
       <form>
@@ -48,7 +48,7 @@ function PersonalInfo({ personalInfo, setPersonalInfo }) {
           type="url"
           name="linkedIn"
           id="linkedIn"
-          value={personalInfo.linkedIn}
+          value={personalInfo.linkedin}
           placeholder="www.linkedin.com/in/kondwanimuwowo"
           onChange={(event) =>
             setPersonalInfo({ ...personalInfo, linkedIn: event.target.value })
@@ -102,4 +102,4 @@ function PersonalInfo({ personalInfo, setPersonalInfo }) {
   );
 }
 
-export default PersonalInfo;
+export default PersonalInfoForm;
