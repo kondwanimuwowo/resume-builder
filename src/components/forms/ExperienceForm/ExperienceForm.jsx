@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./ExperienceForm.module.css";
 
 function ExperienceForm({
   experience,
@@ -15,9 +16,11 @@ function ExperienceForm({
   }
 
   return (
-    <div>
+    <div className={styles.experience}>
+      <h2 className={styles.heading}>Work Experience</h2>
       {experience.map((exp, index) => (
-        <div key={index}>
+        <div className={styles.container} key={index}>
+          <h3 className={styles.number}>{index + 1}</h3>
           <div className="experience input">
             <label htmlFor="company">Company</label>
             <input
@@ -101,7 +104,12 @@ function ExperienceForm({
               </button>
             </div>
           </div>
-          <button onClick={() => removeExperienceEntry(index)}>Remove</button>
+          <button
+            className={styles.removeBtn}
+            onClick={() => removeExperienceEntry(index)}
+          >
+            Remove Entry
+          </button>
         </div>
       ))}
       {console.log(experience)}

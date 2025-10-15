@@ -1,11 +1,27 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --blue: #1a73e8;
+  --light-blue: #e8f0fe;
+  --dark-blue: #1557b0;
+  --gray: #5f6368;
+  --light-gray: #f1f3f4;
+  --dark-gray: #202124;
+  --border-gray: #dadce0;
+  --red: #d93025;
+  --light-red: #fce8e6;
+  --links: #646cff;
+  --links-hover: #535bf2;
+  --main-background: #ffffff;
+  --page-min-width: 300px;
+  --header-height: 55px;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: light;
+  color: #213547;
+  background-color: var(--main-background);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,42 +29,63 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--links);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--links-hover);
 }
 
 body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
+  background: inherit;
+  scroll-behavior: smooth;
+  min-width: var(--page-min-width);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 48px;
+}
+
+h2 {
+  color: var(--dark-blue);
+  font-size: 28px;
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 5px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  padding: 10px 16px;
+  margin: 16px 0;
+  font-size: 16px;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  color: white;
+  background-color: var(--blue);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.25s ease;
 }
+
 button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border-color: var(--border-gray);
+  background-color: var(--dark-blue);
 }

@@ -1,0 +1,15 @@
+.personalInfo {
+  text-align: left;
+  margin-bottom: 28px;
+  padding: 16px;
+}
+
+.heading {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 900px) {
+  .personalInfo {
+    padding: 0;
+  }
+}

@@ -1,10 +1,10 @@
 import { useState } from "react";
-import PersonalInfoForm from "./PersonalInfo";
-import PreviewPanel from "./PreviewPanel";
-import EducationForm from "./Education";
-import ExperienceForm from "./Experience";
-import SkillsForm from "./Skills";
-import "./MainArea.css";
+import PersonalInfoForm from "../forms/PersonalInfoForm/PersonalInfoForm";
+import PreviewPanel from "../preview/PreviewPanel";
+import EducationForm from "../forms/EducationForm/EducationForm";
+import ExperienceForm from "../forms/ExperienceForm/ExperienceForm";
+import SkillsForm from "../forms/SkillsForm/SkillsForm";
+import styles from "../layout/MainArea.module.css";
 
 function MainArea() {
   const [personalInfo, setPersonalInfo] = useState({
@@ -111,49 +111,53 @@ function MainArea() {
 
   return (
     <main>
-      <div className="info">
-        <PersonalInfoForm
-          personalInfo={personalInfo}
-          setPersonalInfo={setPersonalInfo}
-        />
+      <div className={styles.formWrapper}>
+        <div className={styles.forms}>
+          <PersonalInfoForm
+            personalInfo={personalInfo}
+            setPersonalInfo={setPersonalInfo}
+          />
+        </div>
+
+        <div className={styles.forms}>
+          <EducationForm
+            education={education}
+            updateEducationEntry={updateEducationEntry}
+            removeEducationEntry={removeEducationEntry}
+          />
+          <button onClick={addEducationEntry}>Add Education</button>
+        </div>
+
+        <div className={styles.forms}>
+          <ExperienceForm
+            experience={experience}
+            updateExperienceEntry={updateExperienceEntry}
+            removeExperienceEntry={removeExperienceEntry}
+            addResponsibilityEntry={addResponsibilityEntry}
+            removeResponsibilityEntry={removeResponsibilityEntry}
+          />
+          <button onClick={addExperienceEntry}>Add Experience</button>
+        </div>
+
+        <div className={styles.forms}>
+          <SkillsForm
+            skills={skills}
+            addSkillEntry={addSkillEntry}
+            removeSkillEntry={removeSkillEntry}
+          />
+          <button onClick={addSkillEntry}>Add Skill</button>
+        </div>
       </div>
 
-      <div className="edu">
-        <EducationForm
-          education={education}
-          updateEducationEntry={updateEducationEntry}
-          removeEducationEntry={removeEducationEntry}
-        />
-        <button onClick={addEducationEntry}>Add Education</button>
-      </div>
-
-      <div className="exp">
-        <ExperienceForm
-          experience={experience}
-          updateExperienceEntry={updateExperienceEntry}
-          removeExperienceEntry={removeExperienceEntry}
-          addResponsibilityEntry={addResponsibilityEntry}
-          removeResponsibilityEntry={removeResponsibilityEntry}
-        />
-        <button onClick={addExperienceEntry}>Add Experience</button>
-      </div>
-
-      <div className="skills">
-        <SkillsForm
-          skills={skills}
-          addSkillEntry={addSkillEntry}
-          removeSkillEntry={removeSkillEntry}
-        />
-        <button onClick={addSkillEntry}>Add Skill</button>
-      </div>
-
-      <div className="preview">
-        <PreviewPanel
-          personalInfo={personalInfo}
-          education={education}
-          experience={experience}
-          skills={skills}
-        />
+      <div>
+        <div className={styles.previewWrapper}>
+          <PreviewPanel
+            personalInfo={personalInfo}
+            education={education}
+            experience={experience}
+            skills={skills}
+          />
+        </div>
       </div>
     </main>
   );

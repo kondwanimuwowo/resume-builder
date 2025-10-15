@@ -1,10 +1,11 @@
-import "./PersonalInfo.css";
+import styles from "./PersonalInfoForm.module.css";
 
 function PersonalInfoForm({ personalInfo, setPersonalInfo }) {
   return (
     <>
-      <form>
-        <label htmlFor="name">Full Name: </label>
+      <div className={styles.personalInfo}>
+        <h2 className={styles.heading}>Personal Info</h2>
+        <label htmlFor="name">Full Name</label>
         <input
           type="text"
           name="name"
@@ -17,7 +18,7 @@ function PersonalInfoForm({ personalInfo, setPersonalInfo }) {
         />
         <br />
 
-        <label htmlFor="email">Email: </label>
+        <label htmlFor="email">Email</label>
         <input
           type="email"
           name="email"
@@ -30,7 +31,7 @@ function PersonalInfoForm({ personalInfo, setPersonalInfo }) {
         />
         <br />
 
-        <label htmlFor="phone">Phone: </label>
+        <label htmlFor="phone">Phone</label>
         <input
           type="tel"
           name="phone"
@@ -43,7 +44,7 @@ function PersonalInfoForm({ personalInfo, setPersonalInfo }) {
         />
         <br />
 
-        <label htmlFor="linkedIn">LinkedIn: </label>
+        <label htmlFor="linkedIn">LinkedIn</label>
         <input
           type="url"
           name="linkedIn"
@@ -56,7 +57,7 @@ function PersonalInfoForm({ personalInfo, setPersonalInfo }) {
         />
         <br />
 
-        <label htmlFor="portfolio">Portfolio: </label>
+        <label htmlFor="portfolio">Portfolio</label>
         <input
           type="url"
           name="portfolio"
@@ -69,7 +70,7 @@ function PersonalInfoForm({ personalInfo, setPersonalInfo }) {
         />
         <br />
 
-        <label htmlFor="city">City: </label>
+        <label htmlFor="city">City</label>
         <input
           type="text"
           name="city"
@@ -83,7 +84,7 @@ function PersonalInfoForm({ personalInfo, setPersonalInfo }) {
         />
         <br />
 
-        <label htmlFor="country">Country: </label>
+        <label htmlFor="country">Country</label>
         <input
           type="text"
           name="country"
@@ -97,7 +98,7 @@ function PersonalInfoForm({ personalInfo, setPersonalInfo }) {
         />
         <br />
         {console.log(personalInfo)}
-      </form>
+      </div>
     </>
   );
 }

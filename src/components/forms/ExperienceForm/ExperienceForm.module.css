@@ -1,0 +1,48 @@
+.experience {
+  text-align: left;
+  padding: 16px;
+}
+
+.heading {
+  margin-bottom: 16px;
+}
+
+.container {
+  position: relative;
+  padding-bottom: 60px;
+  border-radius: 10px;
+  border-bottom: 4px solid var(--light-blue);
+  margin-bottom: 32px;
+}
+
+.removeBtn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: 2px solid red;
+  padding: 0.5em 1.2em;
+  font-size: 0.9em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: transparent;
+  color: red;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.removeBtn:hover {
+  border-color: red;
+  color: white;
+  background-color: red;
+}
+
+.number {
+  color: #0400ff36;
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .experience {
+    padding: 0;
+  }
+}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./SkillsForm.module.css";
 
 function SkillsForm({ skills, addSkillEntry, removeSkillEntry }) {
   const [newSkill, setNewSkill] = useState("");
@@ -9,17 +10,20 @@ function SkillsForm({ skills, addSkillEntry, removeSkillEntry }) {
   }
 
   return (
-    <div>
-      {skills
-        .filter((skill) => skill.trim() !== "")
-        .map((skill, index) => (
-          <li key={index}>
-            {skill}
-            <button onClick={() => removeSkillEntry(index)}>Delete</button>
-          </li>
-        ))}
+    <div className={styles.skills}>
+      <h2 className={styles.heading}>Skills</h2>
+      <ul>
+        {skills
+          .filter((skill) => skill.trim() !== "")
+          .map((skill, index) => (
+            <li key={index}>
+              {skill}
+              <button onClick={() => removeSkillEntry(index)}>Delete</button>
+            </li>
+          ))}
+      </ul>
 
-      <label htmlFor="skill">Enter New Skill</label>
+      <label htmlFor="skill">New Skill</label>
       <input
         type="text"
         id="skill"

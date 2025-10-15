@@ -1,3 +1,5 @@
+import styles from "./EducationForm.module.css";
+
 function EducationForm({
   education,
   updateEducationEntry,
@@ -9,9 +11,11 @@ function EducationForm({
   }
 
   return (
-    <div>
+    <div className={styles.education}>
+      <h2 className={styles.heading}>Education</h2>
       {education.map((edu, index) => (
-        <div key={index}>
+        <div className={styles.container} key={index}>
+          <h3 className={styles.number}>{index + 1}</h3>
           <label htmlFor="institution">Institution</label>
           <input
             type="text"
@@ -47,7 +51,12 @@ function EducationForm({
               handleInputChange(index, "period", event.target.value)
             }
           />
-          <button onClick={() => removeEducationEntry(index)}>Remove</button>
+          <button
+            className={styles.removeBtn}
+            onClick={() => removeEducationEntry(index)}
+          >
+            Remove
+          </button>
         </div>
       ))}
     </div>
