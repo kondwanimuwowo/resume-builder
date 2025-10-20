@@ -1,0 +1,29 @@
+.previewPanel {
+  display: flex;
+  border-collapse: collapse;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  width: 210mm;
+  min-height: 297mm;
+  border: 1px solid var(--border-gray);
+  border-radius: 4px;
+  background-color: inherit;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.sidebar {
+  width: 250px;
+  border-right: 1px solid #eee;
+  padding: 16px;
+  background-color: #f9f9f9;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  flex: 1;
+  padding: 16px;
+}

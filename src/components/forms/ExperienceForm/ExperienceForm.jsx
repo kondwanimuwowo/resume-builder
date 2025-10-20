@@ -69,39 +69,42 @@ function ExperienceForm({
               {exp.responsibilities
                 .filter((res) => res.trim() !== "")
                 .map((res, respIndex) => (
-                  <li key={respIndex}>
-                    {res}
+                  <li className={styles.list} key={respIndex}>
+                    <span>{res}</span>
                     <button
                       onClick={() =>
                         removeResponsibilityEntry(index, respIndex)
                       }
                     >
-                      Delete
+                      x
                     </button>
                   </li>
                 ))}
             </ul>
 
             <div>
-              <label htmlFor="responsibilities">Add Responsibilities</label>
-              <input
-                type="text"
-                id="responsibilities"
-                name="responsibilities"
-                value={newResponsibility}
-                placeholder="List down some responsibilities or achievements"
-                onChange={(event) => setNewResponsibility(event.target.value)}
-              />
-              <button
-                onClick={() => {
-                  if (newResponsibility.trim() !== "") {
-                    addResponsibilityEntry(index, newResponsibility);
-                    setNewResponsibility("");
-                  }
-                }}
-              >
-                Add
-              </button>
+              <label htmlFor="responsibilities">Add New</label>
+              <div className={styles.responsibility}>
+                <input
+                  type="text"
+                  id="responsibilities"
+                  name="responsibilities"
+                  value={newResponsibility}
+                  placeholder="Add a responsibility and click 'Add'"
+                  onChange={(event) => setNewResponsibility(event.target.value)}
+                />
+
+                <button
+                  onClick={() => {
+                    if (newResponsibility.trim() !== "") {
+                      addResponsibilityEntry(index, newResponsibility);
+                      setNewResponsibility("");
+                    }
+                  }}
+                >
+                  +
+                </button>
+              </div>
             </div>
           </div>
           <button

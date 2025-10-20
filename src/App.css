@@ -1,7 +1,7 @@
 #root {
   text-align: center;
   min-width: inherit;
-  overflow-x: auto;
+  min-height: 100vh;
 }
 
 input {

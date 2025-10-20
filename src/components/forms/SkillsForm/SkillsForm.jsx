@@ -16,23 +16,25 @@ function SkillsForm({ skills, addSkillEntry, removeSkillEntry }) {
         {skills
           .filter((skill) => skill.trim() !== "")
           .map((skill, index) => (
-            <li key={index}>
-              {skill}
-              <button onClick={() => removeSkillEntry(index)}>Delete</button>
+            <li className={styles.list} key={index}>
+              <span>{skill}</span>
+              <button onClick={() => removeSkillEntry(index)}>x</button>
             </li>
           ))}
       </ul>
 
       <label htmlFor="skill">New Skill</label>
-      <input
-        type="text"
-        id="skill"
-        name="skill"
-        placeholder="e.g., Javascript"
-        value={newSkill}
-        onChange={(event) => setNewSkill(event.target.value)}
-      />
-      <button onClick={handleAdd}>Add</button>
+      <div className={styles.skillEntry}>
+        <input
+          type="text"
+          id="skill"
+          name="skill"
+          placeholder="e.g., Javascript"
+          value={newSkill}
+          onChange={(event) => setNewSkill(event.target.value)}
+        />
+        <button onClick={handleAdd}>+</button>
+      </div>
     </div>
   );
 }
